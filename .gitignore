@@ -3,3 +3,4 @@ app.js
 node_modules/
 *.sublime-*
 json/
+test/*.txt
