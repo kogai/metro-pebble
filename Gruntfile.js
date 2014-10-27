@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     },
     concat: {
       options: {
-        separator: ';'
+        // separator: ';'
       },
       dist: {
         src: [
@@ -40,10 +40,20 @@ module.exports = function(grunt) {
         }
       }
     },
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          captureFile: 'test/results.txt', // Optionally capture the reporter output to a file
+          quiet: false // Optionally suppress output to standard out (defaults to false)
+        },
+        src: ['test/*.js']
+      }
+    },
     watch: {
       js: {
         files: [ 'js/*.js' ],
-        tasks: [ 'jshint' , 'concat'/*, 'uglify' */],
+        tasks: [ 'mochaTest' , 'jshint' , 'concat'/*, 'uglify' */],
         options: {
             livereload: true,
             nospawn: true
@@ -56,11 +66,12 @@ module.exports = function(grunt) {
     'grunt-contrib-uglify',
     'grunt-contrib-jshint',
     'grunt-contrib-concat',
-    'grunt-contrib-watch'
+    'grunt-contrib-watch',
+    'grunt-mocha-test'
   ].forEach(function (task) {
     grunt.loadNpmTasks(task);
   })
 
-  grunt.registerTask('build', [ 'jshint' , 'concat']);
+  grunt.registerTask('build', [ 'mochaTest' , 'jshint' , 'concat']);
   grunt.registerTask('default', [ 'jshint' , 'concat' , 'watch' ]);
 };

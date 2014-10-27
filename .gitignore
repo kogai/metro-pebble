@@ -2,3 +2,4 @@ confidence.js
 app.js
 node_modules/
 *.sublime-*
+json/

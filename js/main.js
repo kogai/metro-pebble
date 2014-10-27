@@ -35,7 +35,7 @@ function parseData(data){
   var menus = [];
   var lists = data[0]['odpt:weekdays'];
   var time  = new Date();
-  var hours   = time.getHours();
+  var hours = time.getHours();
   var minutes   = time.getMinutes();
   for (var i = 0; i < lists.length; i++) {
     var station = lists[i]['odpt:destinationStation'];
