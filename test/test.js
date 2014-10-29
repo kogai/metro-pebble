@@ -1,5 +1,5 @@
 var assert = require('assert');
-// var getInfo = require('../app.js');
+var getInfo = require('../app.js');
 
 describe( 'mochaのテスト' , function() {
 	it( '1 + 1は2になること' , function() {

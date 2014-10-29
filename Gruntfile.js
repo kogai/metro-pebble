@@ -72,6 +72,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks(task);
   })
 
+  grunt.registerTask('test', [ 'mochaTest' ]);
   grunt.registerTask('build', [ 'mochaTest' , 'jshint' , 'concat']);
   grunt.registerTask('default', [ 'jshint' , 'concat' , 'watch' ]);
 };

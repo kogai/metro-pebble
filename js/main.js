@@ -56,4 +56,4 @@ function parseData(data){
   }
   return menus;
 }
-// module.exports = getInfo;
+// module.exports = parseData;
