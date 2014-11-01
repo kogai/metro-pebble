@@ -10,14 +10,10 @@ module.exports = function(grunt) {
           console: true,
           module: true
         },
-        ignores : ['public/js/_analytics.js'],
         force : true
       }
     },
     concat: {
-      options: {
-        // separator: ';'
-      },
       dist: {
         src: [
         'js/confidence.js',
@@ -26,18 +22,7 @@ module.exports = function(grunt) {
         'js/getLocation.js',
         'js/main.js'
         ],
-        dest: 'app.js'
-      }
-    },
-    uglify: {
-      my_target: {
-        options: {
-          // sourceMap: true,
-          // sourceMapName: 'app.min.map'
-        },
-        files: {
-          'app.js': ['js/*.js']
-        }
+        dest: 'src/js/app.js'
       }
     },
     mochaTest: {
@@ -63,7 +48,6 @@ module.exports = function(grunt) {
   });
 
   [
-    'grunt-contrib-uglify',
     'grunt-contrib-jshint',
     'grunt-contrib-concat',
     'grunt-contrib-watch',
