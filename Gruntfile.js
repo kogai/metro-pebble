@@ -29,11 +29,19 @@ module.exports = function(grunt) {
       test: {
         options: {
           reporter: 'spec',
-          captureFile: 'test/results.txt', // Optionally capture the reporter output to a file
-          quiet: false // Optionally suppress output to standard out (defaults to false)
+          captureFile: 'test/results.txt', 
+          quiet: false 
         },
         src: ['test/*.js']
       }
+    },
+    exec : {
+        build : {
+            command : 'pebble build'
+        },
+        install : {
+            command : 'pebble install --phone 192.168.10.4'
+        }
     },
     watch: {
       js: {
@@ -48,6 +56,7 @@ module.exports = function(grunt) {
   });
 
   [
+    'grunt-exec',
     'grunt-contrib-jshint',
     'grunt-contrib-concat',
     'grunt-contrib-watch',
@@ -57,6 +66,6 @@ module.exports = function(grunt) {
   })
 
   grunt.registerTask('test', [ 'mochaTest' ]);
-  grunt.registerTask('build', [ 'mochaTest' , 'jshint' , 'concat']);
+  grunt.registerTask('build', [ 'jshint' , 'concat' , 'exec']);
   grunt.registerTask('default', [ 'jshint' , 'concat' , 'watch' ]);
 };

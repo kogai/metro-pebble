@@ -4,7 +4,7 @@
 >> [39m    at Function.Module._load (module.js:280:25)[31m
 >> [39m    at Module.require (module.js:364:17)[31m
 >> [39m    at require (module.js:380:17)[31m
->> [39m    at Object.<anonymous> (C:\Users\itakura\metro-pebble\app.js:4:10)[31m
+>> [39m    at Object.<anonymous> (/Users/kogaishinichi/metro-pebble/src/js/app.js:4:10)[31m
 >> [39m    at Module._compile (module.js:456:26)[31m
 >> [39m    at Object.Module._extensions..js (module.js:474:10)[31m
 >> [39m    at Module.load (module.js:356:32)[31m
